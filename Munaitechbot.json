@@ -1,0 +1,91 @@
+{
+  "name": "MUNAISZNTECHS™",
+  "description": "MUNAISZNTECHS™ is a powerful multi-device WhatsApp automation bot developed with Node.js. Featuring advanced command execution, session-based authentication, media processing, automated messaging and database integration.",
+  "logo": "https://raw.githubusercontent.com/munaiszndonnivan-del/Muniitechbot/main/munaiszntechs-logo.png",
+  "logo_description": "Official MUNAISZNTECHS™ brand logo. A premium futuristic circular emblem featuring a deep black background, metallic silver lettering, sharp custom typography, luminous turquoise and cyan neon accents, a glowing circular border, and the MUNAISZNTECHS™ name. The design represents advanced technology, innovation, reliability and digital excellence.",
+  "keywords": [
+    "MUNAISZNTECHS",
+    "MUNAISZNTECHS-BOT",
+    "WhatsApp",
+    "WhatsApp-Bot",
+    "NodeJS",
+    "Automation",
+    "Multi-Device",
+    "Technology"
+  ],
+  "success_url": "/",
+  "repository": "https://github.com/munaiszndonnivan-del/Muniitechbot",
+  "stack": "heroku-24",
+  "env": {
+    "SESSION_ID": {
+      "description": "WhatsApp authentication session string required to connect and initialize the bot.",
+      "required": true,
+      "value": ""
+    },
+    "OWNER_NUMBER": {
+      "description": "Bot administrator WhatsApp number in international format without the plus sign. Example: 2547XXXXXXXX.",
+      "required": true,
+      "value": ""
+    },
+    "DATABASE_URL": {
+      "description": "Optional MongoDB, PostgreSQL or MySQL database connection URL.",
+      "required": false,
+      "value": ""
+    },
+    "BOT_NAME": {
+      "description": "Official WhatsApp bot display name.",
+      "required": false,
+      "value": "MUNAISZNTECHS™"
+    },
+    "BOT_OWNER": {
+      "description": "Official bot developer and owner name.",
+      "required": false,
+      "value": "MUNAISZNTECHS"
+    },
+    "PREFIXES": {
+      "description": "Command prefixes separated by commas.",
+      "required": false,
+      "value": "."
+    },
+    "PACKNAME": {
+      "description": "Official sticker pack name.",
+      "required": false,
+      "value": "MUNAISZNTECHS™"
+    },
+    "COMMAND_MODE": {
+      "description": "Controls whether bot commands are accessible publicly or privately.",
+      "required": false,
+      "value": "public"
+    },
+    "TIMEZONE": {
+      "description": "Default bot timezone.",
+      "required": false,
+      "value": "Africa/Nairobi"
+    },
+    "REMOVEBG_KEY": {
+      "description": "Optional remove.bg API key for image background removal.",
+      "required": false,
+      "value": ""
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
